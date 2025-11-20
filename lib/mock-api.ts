@@ -1,4 +1,4 @@
-// Mock API for dynamic data
+// API client for making HTTP requests
 
 export interface AvailableDate {
   date: string;
@@ -20,112 +20,144 @@ export interface Project {
   discount?: number;
 }
 
-// Mock API: Get available dates for booking
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "";
+
+// API: Get available dates for booking
 export async function getAvailableDates(): Promise<AvailableDate[]> {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 100));
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/available-dates`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-  return [
-    { date: "2025-01-22", day: "Wed" },
-    { date: "2025-01-23", day: "Thu" },
-    { date: "2025-01-27", day: "Mon" },
-    { date: "2025-01-29", day: "Wed" },
-    { date: "2025-01-30", day: "Thu" },
-    { date: "2025-02-03", day: "Mon" },
-    { date: "2025-02-05", day: "Wed" },
-    { date: "2025-02-06", day: "Thu" },
-    { date: "2025-02-10", day: "Mon" },
-    { date: "2025-02-12", day: "Wed" },
-  ];
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching available dates:", error);
+    throw error;
+  }
 }
 
-// Mock API: Get available time slots for a specific date
+// API: Get available time slots for a specific date
 export async function getTimeSlots(date: string): Promise<string[]> {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 100));
+  try {
+    const response = await fetch(
+      `${API_BASE_URL}/api/time-slots?date=${encodeURIComponent(date)}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-  return ["9:00 AM", "10:30 AM", "1:00 PM", "3:30 PM", "5:00 PM"];
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data.timeSlots;
+  } catch (error) {
+    console.error("Error fetching time slots:", error);
+    throw error;
+  }
 }
 
-// Mock API: Get projects data
+// API: Get projects data
 export async function getProjects(): Promise<Project[]> {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 100));
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/projects`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-  return [
-    {
-      id: "6",
-      logo: "/code-review-ai-logo.jpg",
-      link: "#",
-      comingSoon: true,
-    },
-    {
-      id: "1",
-      logo: "/cloud-sync-logo.jpg",
-      link: "#",
-      isNew: true,
-      discountEndDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
-    },
-    {
-      id: "2",
-      logo: "/data-visualization-logo.png",
-      link: "#",
-      isNew: true,
-      discountEndDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
-    },
-    {
-      id: "3",
-      logo: "/devops-tools-logo.jpg",
-      link: "#",
-      discount: 15,
-    },
-    {
-      id: "4",
-      logo: "/api-gateway-logo.jpg",
-      link: "#",
-      discount: 25,
-    },
-    {
-      id: "5",
-      logo: "/security-authentication-logo.jpg",
-      link: "#",
-      discount: 20,
-    },
-  ];
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    
+    // Convert date strings back to Date objects
+    return data.map((project: any) => ({
+      ...project,
+      discountEndDate: project.discountEndDate
+        ? new Date(project.discountEndDate)
+        : undefined,
+    }));
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+    throw error;
+  }
 }
 
-// Mock API: Book a call
+// API: Book a call
 export async function bookCall(data: {
   date: string;
   time: string;
   email?: string;
 }): Promise<{ success: boolean; message: string }> {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/book-call`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-  console.log("Booking call:", data);
+    const result = await response.json();
 
-  return {
-    success: true,
-    message: "Call booked successfully!",
-  };
+    if (!response.ok) {
+      throw new Error(result.message || `HTTP error! status: ${response.status}`);
+    }
+
+    return result;
+  } catch (error) {
+    console.error("Error booking call:", error);
+    return {
+      success: false,
+      message: error instanceof Error ? error.message : "Failed to book call",
+    };
+  }
 }
 
-// Mock API: Submit contact form
+// API: Submit contact form
 export async function submitContactForm(data: {
   firstName: string;
   lastName: string;
   email: string;
   message: string;
 }): Promise<{ success: boolean; message: string }> {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/contact`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-  console.log("Contact form submitted:", data);
+    const result = await response.json();
 
-  return {
-    success: true,
-    message: "Message sent successfully!",
-  };
+    if (!response.ok) {
+      throw new Error(result.message || `HTTP error! status: ${response.status}`);
+    }
+
+    return result;
+  } catch (error) {
+    console.error("Error submitting contact form:", error);
+    return {
+      success: false,
+      message: error instanceof Error ? error.message : "Failed to send message",
+    };
+  }
 }
 
