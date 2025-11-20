@@ -37,7 +37,7 @@ export function BookCallModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size="default">
+        <Button size="default" className="cursor-pointer">
           <Calendar className="mr-2 h-4 w-4" />
           Book a call
         </Button>
