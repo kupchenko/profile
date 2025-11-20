@@ -36,7 +36,6 @@ export function HeroSection() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <span className="text-sm font-medium text-muted-foreground">Connect:</span>
             <a
               href="https://github.com"
               target="_blank"
