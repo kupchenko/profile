@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Languages, Check } from "lucide-react";
@@ -12,9 +13,15 @@ const languages = [
 
 export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
+  const [open, setOpen] = useState(false);
+
+  const handleLanguageChange = (code: "en" | "es") => {
+    setLanguage(code);
+    setOpen(false);
+  };
 
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button variant="ghost" size="sm" className="h-8 gap-1 px-2 cursor-pointer">
           <Languages className="h-3.5 w-3.5" />
@@ -29,7 +36,7 @@ export function LanguageSwitcher() {
               variant={language === lang.code ? "secondary" : "ghost"}
               size="sm"
               className="w-full justify-start cursor-pointer"
-              onClick={() => setLanguage(lang.code)}
+              onClick={() => handleLanguageChange(lang.code)}
             >
               <span className="mr-2 text-lg">{lang.flag}</span>
               <span className="flex-1 text-left">{lang.name}</span>
