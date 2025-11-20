@@ -1,5 +1,5 @@
-import { Card } from "@/components/ui/card"
-import { Star } from "lucide-react"
+import { ContainerWrapper } from "./container-wrapper"
+import { TestimonialCard } from "./testimonial-card"
 
 const testimonials = [
   {
@@ -27,7 +27,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="container px-4 py-12 md:py-16">
+    <ContainerWrapper as="section" className="py-12 md:py-16">
       <div className="space-y-8">
         <div className="text-center space-y-2">
           <h2 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl">What Clients Say</h2>
@@ -35,21 +35,16 @@ export function TestimonialsSection() {
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="p-6 space-y-4">
-              <div className="flex gap-1">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-yellow-500 text-yellow-500" />
-                ))}
-              </div>
-              <p className="text-sm leading-relaxed text-muted-foreground">"{testimonial.content}"</p>
-              <div className="border-t border-border/50 pt-4">
-                <div className="font-semibold text-sm">{testimonial.name}</div>
-                <div className="text-xs text-muted-foreground">{testimonial.role}</div>
-              </div>
-            </Card>
+            <TestimonialCard
+              key={index}
+              name={testimonial.name}
+              role={testimonial.role}
+              content={testimonial.content}
+              rating={testimonial.rating}
+            />
           ))}
         </div>
       </div>
-    </section>
+    </ContainerWrapper>
   )
 }

@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -9,20 +9,20 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Sparkles } from "lucide-react"
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Rocket } from "lucide-react";
 
 export function ContactModal() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button size="default" className="gap-2">
-          <Sparkles className="h-4 w-4" />
+        <Button size="default" className="gap-2 cursor-pointer">
+          <Rocket className="h-4 w-4" />
           Let&apos;s Work Together
         </Button>
       </DialogTrigger>
@@ -30,7 +30,8 @@ export function ContactModal() {
         <DialogHeader>
           <DialogTitle className="text-2xl">Get in Touch</DialogTitle>
           <DialogDescription>
-            Fill out the form below and I&apos;ll get back to you as soon as possible.
+            Fill out the form below and I&apos;ll get back to you as soon as
+            possible.
           </DialogDescription>
         </DialogHeader>
         <form className="space-y-5 pt-4">
@@ -46,11 +47,21 @@ export function ContactModal() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="john@example.com" required />
+            <Input
+              id="email"
+              type="email"
+              placeholder="john@example.com"
+              required
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Message</Label>
-            <Textarea id="message" placeholder="Tell me about your project..." rows={4} required />
+            <Textarea
+              id="message"
+              placeholder="Tell me about your project..."
+              rows={4}
+              required
+            />
           </div>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <div className="flex h-12 w-12 items-center justify-center rounded border border-border bg-muted">
@@ -58,11 +69,15 @@ export function ContactModal() {
             </div>
             <span>Protected by Google reCAPTCHA</span>
           </div>
-          <Button type="submit" className="w-full" size="default">
+          <Button
+            type="submit"
+            className="w-full cursor-pointer"
+            size="default"
+          >
             Send Message
           </Button>
         </form>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

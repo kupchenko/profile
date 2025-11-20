@@ -1,6 +1,8 @@
+import { ContainerWrapper } from "./container-wrapper"
+
 export function AboutSection() {
   return (
-    <section className="container py-12 md:py-16">
+    <ContainerWrapper as="section" className="py-12 md:py-16">
       <div className="mx-auto max-w-3xl space-y-6">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">About Me</h2>
         <div className="space-y-4 text-base leading-relaxed text-muted-foreground lg:text-lg">
@@ -25,6 +27,6 @@ export function AboutSection() {
           </p>
         </div>
       </div>
-    </section>
+    </ContainerWrapper>
   )
 }
