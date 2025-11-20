@@ -4,6 +4,9 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Navigation } from "@/components/navigation"
 import { ThemeProvider } from "@/components/theme-provider"
+import { LanguageProvider } from "@/contexts/language-context"
+import { SpanishBanner } from "@/components/spanish-banner"
+import { ContainerWrapper } from "@/components/container-wrapper"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -42,9 +45,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          <Navigation />
-          {children}
-          <Analytics />
+          <LanguageProvider>
+            <Navigation />
+            <ContainerWrapper className="py-4">
+              <SpanishBanner />
+            </ContainerWrapper>
+            {children}
+            <Analytics />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

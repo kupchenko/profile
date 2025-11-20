@@ -1,0 +1,189 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "portfolio": "Portafolio"
+  },
+  "languageSwitcher": {
+    "title": "Seleccionar Idioma",
+    "description": "Elige tu idioma preferido para la interfaz"
+  },
+  "hero": {
+    "availableBadge": "Disponible para nuevos proyectos",
+    "name": "Alex Johnson",
+    "title": "Ingeniero Fundador y Asesor de Startups",
+    "description": "Construyo experiencias digitales accesibles y pixel-perfect para la web. Mi trabajo favorito se encuentra en la intersección del diseño y el desarrollo, creando experiencias que no solo se ven geniales, sino que están meticulosamente construidas para el rendimiento y la usabilidad.",
+    "location": "San Francisco, CA",
+    "cta": {
+      "workTogether": "Trabajemos Juntos",
+      "bookCall": "Reservar una llamada"
+    }
+  },
+  "stats": {
+    "yearsIndustry": "Años en la Industria",
+    "successfulProjects": "Proyectos Exitosos",
+    "happyClients": "Clientes Satisfechos",
+    "awards": "Premios y Reconocimientos"
+  },
+  "expertise": {
+    "title": "Cómo Puedo Ayudarte",
+    "subtitle": "Experiencia en todo el ciclo de vida del producto",
+    "items": {
+      "mvp": {
+        "title": "Idea a MVP",
+        "description": "Iniciando proyectos desde cero y dando vida a tu visión"
+      },
+      "devExperience": {
+        "title": "Experiencia del Desarrollador",
+        "description": "Construyendo rutas y flujos de trabajo de alto rendimiento para desarrolladores"
+      },
+      "processes": {
+        "title": "Procesos de Ingeniería",
+        "description": "Estableciendo procesos de ingeniería eficientes y mejores prácticas"
+      },
+      "diligence": {
+        "title": "Diligencia Técnica",
+        "description": "Auditorías técnicas y revisiones de código exhaustivas"
+      },
+      "scaling": {
+        "title": "Arquitectura Escalable",
+        "description": "Arquitectando sistemas diseñados para el crecimiento y rendimiento"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen los Clientes",
+    "subtitle": "Confiado por fundadores y líderes de ingeniería",
+    "items": [
+      {
+        "name": "Sarah Chen",
+        "role": "CEO, TechStartup Inc",
+        "content": "La experiencia técnica y el pensamiento estratégico de Alex nos ayudaron a escalar de 0 a 100k usuarios en solo 6 meses. Su guía fue invaluable."
+      },
+      {
+        "name": "Michael Rodriguez",
+        "role": "CTO, DataFlow",
+        "content": "Trabajar con Alex fue un cambio de juego. No solo entregó código excepcional, sino que también asesoró a todo nuestro equipo de ingeniería."
+      },
+      {
+        "name": "Emily Watson",
+        "role": "Gerente de Producto, CloudSync",
+        "content": "Alex tiene una capacidad increíble para traducir requisitos de negocio en soluciones técnicas elegantes. ¡Altamente recomendado!"
+      }
+    ]
+  },
+  "recentWork": {
+    "featuredProjects": "Proyectos Destacados",
+    "recentArticles": "Artículos Recientes",
+    "viewAll": "Ver todos",
+    "exploreArticles": "Explorar Todos los Artículos",
+    "projects": [
+      {
+        "title": "TaskMaster Pro",
+        "description": "Una herramienta integral de gestión de proyectos para equipos remotos con colaboración en tiempo real.",
+        "tags": ["React", "Node.js", "PostgreSQL"]
+      },
+      {
+        "title": "DevHub",
+        "description": "Una plataforma social que conecta desarrolladores de todo el mundo con compartición de código y mentoría.",
+        "tags": ["Next.js", "TypeScript", "Supabase"]
+      },
+      {
+        "title": "Panel de Análisis",
+        "description": "Plataforma de análisis en tiempo real con visualizaciones personalizadas y herramientas de informes.",
+        "tags": ["React", "D3.js", "AWS"]
+      }
+    ],
+    "articles": [
+      {
+        "title": "Construyendo Aplicaciones React Escalables",
+        "date": "15 Ene, 2025",
+        "readTime": "8 min de lectura"
+      },
+      {
+        "title": "El Futuro del Desarrollo Web",
+        "date": "10 Ene, 2025",
+        "readTime": "6 min de lectura"
+      },
+      {
+        "title": "Optimizando el Rendimiento en Next.js",
+        "date": "5 Ene, 2025",
+        "readTime": "10 min de lectura"
+      }
+    ]
+  },
+  "projectsPage": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Explora mi portafolio de productos y soluciones exitosas",
+    "badges": {
+      "comingSoon": "Próximamente",
+      "new": "Nuevo 🔥",
+      "discount": "% de Descuento"
+    },
+    "buttons": {
+      "notify": "Notificar cuando esté disponible",
+      "tryIt": "Probar"
+    },
+    "lifetimeOffer": "La Oferta de por Vida Termina En",
+    "projects": [
+      {
+        "name": "CodeReview AI",
+        "description": "Asistente de revisión de código impulsado por IA que ayuda a los equipos a mantener altos estándares de calidad de código."
+      },
+      {
+        "name": "CloudSync Pro",
+        "description": "Plataforma de sincronización de archivos y colaboración de nivel empresarial para equipos distribuidos."
+      },
+      {
+        "name": "DataViz Studio",
+        "description": "Panel de visualización de datos y análisis avanzado para inteligencia de negocios."
+      },
+      {
+        "name": "DevOps Toolkit",
+        "description": "Suite completa de herramientas para flujos de trabajo DevOps modernos y pipelines CI/CD."
+      },
+      {
+        "name": "API Gateway Hub",
+        "description": "Plataforma centralizada de gestión de API con limitación de tasa y capacidades de monitoreo."
+      },
+      {
+        "name": "SecureAuth",
+        "description": "Sistema de autenticación de confianza cero con soporte multifactor e integración biométrica."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Ponerse en Contacto",
+    "description": "Completa el formulario a continuación y me pondré en contacto contigo lo antes posible.",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo Electrónico",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+    "recaptcha": "Protegido por Google reCAPTCHA",
+    "submit": "Enviar Mensaje"
+  },
+  "bookCall": {
+    "title": "Agendar una Llamada de 30 Minutos",
+    "description": "Reserva una rápida llamada introductoria de 30 minutos para discutir tu proyecto y explorar cómo podemos trabajar juntos.",
+    "selectDate": "Selecciona una Fecha",
+    "selectTime": "Selecciona una Hora",
+    "showMoreDates": "mostrar más fechas",
+    "monthlyCalendar": "Calendario Mensual",
+    "monthlyDescription": "Selecciona una fecha del calendario mensual completo.",
+    "confirmBooking": "Confirmar Reserva",
+    "days": {
+      "sun": "Dom",
+      "mon": "Lun",
+      "tue": "Mar",
+      "wed": "Mié",
+      "thu": "Jue",
+      "fri": "Vie",
+      "sat": "Sáb"
+    }
+  },
+  "banner": {
+    "spanishDisclaimer": "No soy hablante nativo de español, así que me disculpo de antemano si alguna traducción es hilarante :)"
+  }
+}
+

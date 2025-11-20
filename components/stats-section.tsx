@@ -1,12 +1,17 @@
+"use client";
+
 import { ContainerWrapper } from "./container-wrapper"
 import { StatCard } from "./stat-card"
+import { useLanguage } from "@/contexts/language-context";
 
 export function StatsSection() {
+  const { t } = useLanguage();
+  
   const stats = [
-    { value: "10+", label: "Years in the Industry" },
-    { value: "50+", label: "Successful Projects" },
-    { value: "30+", label: "Happy Clients" },
-    { value: "5+", label: "Awards & Recognition" },
+    { value: "10+", label: t.stats.yearsIndustry },
+    { value: "50+", label: t.stats.successfulProjects },
+    { value: "30+", label: t.stats.happyClients },
+    { value: "5+", label: t.stats.awards },
   ]
 
   return (

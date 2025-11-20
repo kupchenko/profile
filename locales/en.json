@@ -1,0 +1,189 @@
+{
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "portfolio": "Portfolio"
+  },
+  "languageSwitcher": {
+    "title": "Select Language",
+    "description": "Choose your preferred language for the interface"
+  },
+  "hero": {
+    "availableBadge": "Available for new projects",
+    "name": "Alex Johnson",
+    "title": "Founding Engineer & Startup Advisor",
+    "description": "I build accessible, pixel-perfect digital experiences for the web. My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.",
+    "location": "San Francisco, CA",
+    "cta": {
+      "workTogether": "Let's Work Together",
+      "bookCall": "Book a call"
+    }
+  },
+  "stats": {
+    "yearsIndustry": "Years in the Industry",
+    "successfulProjects": "Successful Projects",
+    "happyClients": "Happy Clients",
+    "awards": "Awards & Recognition"
+  },
+  "expertise": {
+    "title": "How I Can Help You",
+    "subtitle": "Expertise across the full product lifecycle",
+    "items": {
+      "mvp": {
+        "title": "Idea to MVP",
+        "description": "Starting projects from scratch and bringing your vision to life"
+      },
+      "devExperience": {
+        "title": "Developer Experience",
+        "description": "Building high-performance developer paths and workflows"
+      },
+      "processes": {
+        "title": "Engineering Processes",
+        "description": "Setting up efficient engineering processes and best practices"
+      },
+      "diligence": {
+        "title": "Technical Due Diligence",
+        "description": "Comprehensive technical audits and code reviews"
+      },
+      "scaling": {
+        "title": "Scaling Architecture",
+        "description": "Architecting systems designed for growth and performance"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "What Clients Say",
+    "subtitle": "Trusted by founders and engineering leaders",
+    "items": [
+      {
+        "name": "Sarah Chen",
+        "role": "CEO, TechStartup Inc",
+        "content": "Alex's technical expertise and strategic thinking helped us scale from 0 to 100k users in just 6 months. His guidance was invaluable."
+      },
+      {
+        "name": "Michael Rodriguez",
+        "role": "CTO, DataFlow",
+        "content": "Working with Alex was a game-changer. He not only delivered exceptional code but also mentored our entire engineering team."
+      },
+      {
+        "name": "Emily Watson",
+        "role": "Product Manager, CloudSync",
+        "content": "Alex has an incredible ability to translate business requirements into elegant technical solutions. Highly recommended!"
+      }
+    ]
+  },
+  "recentWork": {
+    "featuredProjects": "Featured Projects",
+    "recentArticles": "Recent Articles",
+    "viewAll": "View all",
+    "exploreArticles": "Explore All Articles",
+    "projects": [
+      {
+        "title": "TaskMaster Pro",
+        "description": "A comprehensive project management tool for remote teams with real-time collaboration.",
+        "tags": ["React", "Node.js", "PostgreSQL"]
+      },
+      {
+        "title": "DevHub",
+        "description": "A social platform connecting developers worldwide with code sharing and mentorship.",
+        "tags": ["Next.js", "TypeScript", "Supabase"]
+      },
+      {
+        "title": "Analytics Dashboard",
+        "description": "Real-time analytics platform with custom visualizations and reporting tools.",
+        "tags": ["React", "D3.js", "AWS"]
+      }
+    ],
+    "articles": [
+      {
+        "title": "Building Scalable React Applications",
+        "date": "Jan 15, 2025",
+        "readTime": "8 min read"
+      },
+      {
+        "title": "The Future of Web Development",
+        "date": "Jan 10, 2025",
+        "readTime": "6 min read"
+      },
+      {
+        "title": "Optimizing Performance in Next.js",
+        "date": "Jan 5, 2025",
+        "readTime": "10 min read"
+      }
+    ]
+  },
+  "projectsPage": {
+    "title": "Featured Projects",
+    "subtitle": "Explore my portfolio of successful products and solutions",
+    "badges": {
+      "comingSoon": "Coming soon",
+      "new": "New 🔥",
+      "discount": "% Discount"
+    },
+    "buttons": {
+      "notify": "Notify when live",
+      "tryIt": "Try it"
+    },
+    "lifetimeOffer": "Lifetime Offer Ends In",
+    "projects": [
+      {
+        "name": "CodeReview AI",
+        "description": "AI-powered code review assistant that helps teams maintain high code quality standards."
+      },
+      {
+        "name": "CloudSync Pro",
+        "description": "Enterprise-grade file synchronization and collaboration platform for distributed teams."
+      },
+      {
+        "name": "DataViz Studio",
+        "description": "Advanced data visualization and analytics dashboard for business intelligence."
+      },
+      {
+        "name": "DevOps Toolkit",
+        "description": "Comprehensive suite of tools for modern DevOps workflows and CI/CD pipelines."
+      },
+      {
+        "name": "API Gateway Hub",
+        "description": "Centralized API management platform with rate limiting and monitoring capabilities."
+      },
+      {
+        "name": "SecureAuth",
+        "description": "Zero-trust authentication system with multi-factor support and biometric integration."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Fill out the form below and I'll get back to you as soon as possible.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "recaptcha": "Protected by Google reCAPTCHA",
+    "submit": "Send Message"
+  },
+  "bookCall": {
+    "title": "Schedule a 30-Minute Call",
+    "description": "Book a quick 30-minute introductory call to discuss your project and explore how we can work together.",
+    "selectDate": "Select a Date",
+    "selectTime": "Select a Time",
+    "showMoreDates": "show more dates",
+    "monthlyCalendar": "Monthly Calendar",
+    "monthlyDescription": "Select a date from the full monthly calendar view.",
+    "confirmBooking": "Confirm Booking",
+    "days": {
+      "sun": "Sun",
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat"
+    }
+  },
+  "banner": {
+    "spanishDisclaimer": ""
+  }
+}
+

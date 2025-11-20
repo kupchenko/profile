@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -12,56 +12,61 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { useLanguage } from "@/contexts/language-context";
+import {
+  getAvailableDates,
+  getTimeSlots,
+  type AvailableDate,
+} from "@/lib/mock-api";
 import { Calendar, Clock, ChevronRight } from "lucide-react";
 
-const availableDates = [
-  { date: "2025-01-22", day: "Wed" },
-  { date: "2025-01-23", day: "Thu" },
-  { date: "2025-01-27", day: "Mon" },
-  { date: "2025-01-29", day: "Wed" },
-  { date: "2025-01-30", day: "Thu" },
-  { date: "2025-02-03", day: "Mon" },
-  { date: "2025-02-05", day: "Wed" },
-  { date: "2025-02-06", day: "Thu" },
-  { date: "2025-02-10", day: "Mon" },
-  { date: "2025-02-12", day: "Wed" },
-];
-
-const timeSlots = ["9:00 AM", "10:30 AM", "1:00 PM", "3:30 PM", "5:00 PM"];
-
 export function BookCallModal() {
+  const { t } = useLanguage();
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [showMonthlyPopup, setShowMonthlyPopup] = useState(false);
+  const [availableDates, setAvailableDates] = useState<AvailableDate[]>([]);
+  const [timeSlots, setTimeSlots] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Load available dates from mock API
+    getAvailableDates().then(setAvailableDates);
+  }, []);
+
+  useEffect(() => {
+    // Load time slots when a date is selected
+    if (selectedDate) {
+      getTimeSlots(selectedDate).then(setTimeSlots);
+    }
+  }, [selectedDate]);
 
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button size="default" className="cursor-pointer">
           <Calendar className="mr-2 h-4 w-4" />
-          Book a call
+          {t.hero.cta.bookCall}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-md sm:max-w-[425px] overflow-hidden">
         <DialogHeader>
-          <DialogTitle>Schedule a 30-Minute Call</DialogTitle>
-          <DialogDescription>
-            Book a quick 30-minute introductory call to discuss your project and
-            explore how we can work together.
-          </DialogDescription>
+          <DialogTitle>{t.bookCall.title}</DialogTitle>
+          <DialogDescription>{t.bookCall.description}</DialogDescription>
         </DialogHeader>
 
         <div className="space-y-6 py-4 overflow-hidden">
           <div className="space-y-3 overflow-hidden">
             <div className="flex items-center justify-between">
-              <label className="text-sm font-medium">Select a Date</label>
+              <label className="text-sm font-medium">
+                {t.bookCall.selectDate}
+              </label>
               <Button
                 variant="link"
                 size="sm"
                 onClick={() => setShowMonthlyPopup(true)}
                 className="h-auto p-0 text-xs text-blue-500 hover:text-blue-600"
               >
-                show more dates
+                {t.bookCall.showMoreDates}
                 <ChevronRight className="h-3 w-3 ml-1" />
               </Button>
             </div>
@@ -95,11 +100,11 @@ export function BookCallModal() {
             </ScrollArea>
           </div>
 
-          {selectedDate && (
+          {selectedDate && timeSlots.length > 0 && (
             <div className="space-y-3">
               <label className="flex items-center gap-2 text-sm font-medium">
                 <Clock className="h-4 w-4" />
-                Select a Time
+                {t.bookCall.selectTime}
               </label>
               <div className="flex flex-wrap gap-2">
                 {timeSlots.map((time) => (
@@ -121,8 +126,8 @@ export function BookCallModal() {
           )}
 
           {selectedDate && selectedTime && (
-            <Button className="w-full" size="lg">
-              Confirm Booking
+            <Button className="w-full cursor-pointer" size="lg">
+              {t.bookCall.confirmBooking}
             </Button>
           )}
         </div>
@@ -131,14 +136,22 @@ export function BookCallModal() {
       <Dialog open={showMonthlyPopup} onOpenChange={setShowMonthlyPopup}>
         <DialogContent className="max-w-lg sm:max-w-[500px]">
           <DialogHeader>
-            <DialogTitle>Monthly Calendar</DialogTitle>
+            <DialogTitle>{t.bookCall.monthlyCalendar}</DialogTitle>
             <DialogDescription>
-              Select a date from the full monthly calendar view.
+              {t.bookCall.monthlyDescription}
             </DialogDescription>
           </DialogHeader>
           <div className="py-4 overflow-hidden">
             <div className="grid grid-cols-7 gap-2">
-              {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+              {[
+                t.bookCall.days.sun,
+                t.bookCall.days.mon,
+                t.bookCall.days.tue,
+                t.bookCall.days.wed,
+                t.bookCall.days.thu,
+                t.bookCall.days.fri,
+                t.bookCall.days.sat,
+              ].map((day) => (
                 <div
                   key={day}
                   className="text-center text-xs font-medium text-muted-foreground p-2"
