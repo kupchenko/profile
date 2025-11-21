@@ -135,6 +135,7 @@ export async function submitContactForm(data: {
   lastName: string;
   email: string;
   message: string;
+  captchaToken?: string;
 }): Promise<{ success: boolean; message: string }> {
   try {
     const response = await fetch(`${API_BASE_URL}/api/contact`, {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -17,12 +17,15 @@ import { useLanguage } from "@/contexts/language-context";
 import { Rocket } from "lucide-react";
 import { submitContactForm } from "@/lib/api.service";
 import { useToast } from "@/hooks/use-toast";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export function ContactModal() {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -32,10 +35,23 @@ export function ContactModal() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!captchaToken) {
+      toast({
+        title: "Verification Required",
+        description: "Please complete the reCAPTCHA verification.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      const result = await submitContactForm(formData);
+      const result = await submitContactForm({
+        ...formData,
+        captchaToken,
+      });
 
       if (result.success) {
         toast({
@@ -44,6 +60,8 @@ export function ContactModal() {
             result.message || "Your message has been sent successfully.",
         });
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
+        setCaptchaToken(null);
+        recaptchaRef.current?.reset();
         setOpen(false);
       } else {
         toast({
@@ -52,6 +70,9 @@ export function ContactModal() {
             result.message || "Failed to send message. Please try again.",
           variant: "destructive",
         });
+        // Reset captcha on error
+        setCaptchaToken(null);
+        recaptchaRef.current?.reset();
       }
     } catch (error) {
       toast({
@@ -59,6 +80,9 @@ export function ContactModal() {
         description: "An unexpected error occurred. Please try again.",
         variant: "destructive",
       });
+      // Reset captcha on error
+      setCaptchaToken(null);
+      recaptchaRef.current?.reset();
     } finally {
       setIsSubmitting(false);
     }
@@ -134,17 +158,20 @@ export function ContactModal() {
               disabled={isSubmitting}
             />
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <div className="flex h-12 w-12 items-center justify-center rounded border border-border bg-muted">
-              <span className="text-xs">reCAPTCHA</span>
-            </div>
-            <span>{t.contact.recaptcha}</span>
+          <div className="flex justify-center">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+              onChange={(token) => setCaptchaToken(token)}
+              onExpired={() => setCaptchaToken(null)}
+              onErrored={() => setCaptchaToken(null)}
+            />
           </div>
           <Button
             type="submit"
             className="w-full cursor-pointer"
             size="default"
-            disabled={isSubmitting}
+            disabled={isSubmitting || !captchaToken}
           >
             {isSubmitting ? "Sending..." : t.contact.submit}
           </Button>
