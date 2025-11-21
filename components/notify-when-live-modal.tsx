@@ -15,7 +15,7 @@ import { Label } from "@/components/ui/label";
 import { useLanguage } from "@/contexts/language-context";
 import { Bell } from "lucide-react";
 import { submitWaitingList } from "@/lib/api.service";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import ReCAPTCHA from "react-google-recaptcha";
 
 interface NotifyWhenLiveModalProps {
@@ -25,7 +25,6 @@ interface NotifyWhenLiveModalProps {
 export function NotifyWhenLiveModal({ projectName }: NotifyWhenLiveModalProps) {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
@@ -42,11 +41,7 @@ export function NotifyWhenLiveModal({ projectName }: NotifyWhenLiveModalProps) {
     e.preventDefault();
 
     if (!isDevelopment && !captchaToken) {
-      toast({
-        title: "Verification Required",
-        description: "Please complete the reCAPTCHA verification.",
-        variant: "destructive",
-      });
+      toast.error("Please complete the reCAPTCHA verification");
       return;
     }
 
@@ -60,32 +55,25 @@ export function NotifyWhenLiveModal({ projectName }: NotifyWhenLiveModalProps) {
       });
 
       if (result.success) {
-        toast({
-          title: "Success!",
-          description:
-            result.message || "You've been added to the waiting list.",
-        });
+        toast.success(
+          result.message ||
+            "You're on the list! We'll notify you when it's live.",
+          { duration: 5000 }
+        );
         setFormData({ firstName: "", lastName: "", email: "" });
         setCaptchaToken(null);
         recaptchaRef.current?.reset();
         setOpen(false);
       } else {
-        toast({
-          title: "Error",
-          description:
-            result.message || "Failed to join waiting list. Please try again.",
-          variant: "destructive",
-        });
+        toast.error(
+          result.message || "Failed to join waiting list. Please try again."
+        );
         // Reset captcha on error
         setCaptchaToken(null);
         recaptchaRef.current?.reset();
       }
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again.",
-        variant: "destructive",
-      });
+      toast.error("An unexpected error occurred. Please try again.");
       // Reset captcha on error
       setCaptchaToken(null);
       recaptchaRef.current?.reset();

@@ -16,13 +16,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/contexts/language-context";
 import { Rocket } from "lucide-react";
 import { submitContactForm } from "@/lib/api.service";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export function ContactModal() {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
@@ -34,17 +33,13 @@ export function ContactModal() {
   });
 
   // Skip captcha in development mode
-  const isDevelopment = process.env.NODE_ENV === 'development';
+  const isDevelopment = process.env.NODE_ENV === "development";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!isDevelopment && !captchaToken) {
-      toast({
-        title: "Verification Required",
-        description: "Please complete the reCAPTCHA verification.",
-        variant: "destructive",
-      });
+      toast.error("Please complete the reCAPTCHA verification");
       return;
     }
 
@@ -53,36 +48,29 @@ export function ContactModal() {
     try {
       const result = await submitContactForm({
         ...formData,
-        captchaToken,
+        captchaToken: captchaToken || undefined,
       });
 
       if (result.success) {
-        toast({
-          title: "Success!",
-          description:
-            result.message || "Your message has been sent successfully.",
-        });
+        toast.success(
+          result.message ||
+            "Message sent successfully! I'll get back to you soon.",
+          { duration: 5000 }
+        );
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
         setCaptchaToken(null);
         recaptchaRef.current?.reset();
         setOpen(false);
       } else {
-        toast({
-          title: "Error",
-          description:
-            result.message || "Failed to send message. Please try again.",
-          variant: "destructive",
-        });
+        toast.error(
+          result.message || "Failed to send message. Please try again."
+        );
         // Reset captcha on error
         setCaptchaToken(null);
         recaptchaRef.current?.reset();
       }
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again.",
-        variant: "destructive",
-      });
+      toast.error("An unexpected error occurred. Please try again.");
       // Reset captcha on error
       setCaptchaToken(null);
       recaptchaRef.current?.reset();

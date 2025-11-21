@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/contexts/language-context";
 import { SpanishBanner } from "@/components/spanish-banner";
 import { ContainerWrapper } from "@/components/container-wrapper";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -55,6 +56,7 @@ export default function RootLayout({
               <SpanishBanner />
             </ContainerWrapper>
             {children}
+            <Toaster />
             <Analytics />
           </LanguageProvider>
         </ThemeProvider>
