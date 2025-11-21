@@ -1,10 +1,9 @@
-import { HeroSection } from "@/components/hero-section"
-import { ExpertiseSection } from "@/components/expertise-section"
-import { StatsSection } from "@/components/stats-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
-import { RecentWorkSection } from "@/components/recent-work-section"
-import { Separator } from "@/components/ui/separator"
-import { ContainerWrapper } from "@/components/container-wrapper"
+import { HeroSection } from "@/components/hero-section";
+import { ExpertiseSection } from "@/components/expertise-section";
+import { StatsSection } from "@/components/stats-section";
+import { TestimonialsSection } from "@/components/testimonials-section";
+import { Separator } from "@/components/ui/separator";
+import { ContainerWrapper } from "@/components/container-wrapper";
 
 export default function HomePage() {
   return (
@@ -19,10 +18,6 @@ export default function HomePage() {
         <Separator className="bg-border/50" />
       </ContainerWrapper>
       <TestimonialsSection />
-      <ContainerWrapper>
-        <Separator className="bg-border/50" />
-      </ContainerWrapper>
-      <RecentWorkSection />
     </main>
-  )
+  );
 }

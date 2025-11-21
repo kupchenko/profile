@@ -35,29 +35,24 @@ export function HeroSection() {
             <div className="flex items-center gap-1.5">
               <Mail className="h-4 w-4" />
               <a
-                href="mailto:alex@example.com"
+                href="mailto:kupchenko.dmitrii@gmail.com"
                 className="hover:text-foreground transition-colors"
               >
-                alex@example.com
+                kupchenko.dmitrii@gmail.com
               </a>
             </div>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <SocialLink
-              href="https://github.com"
+              href="https://github.com/kupchenko"
               icon={Github}
               label="GitHub"
             />
             <SocialLink
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/dmitrii-kupchenko/"
               icon={Linkedin}
               label="LinkedIn"
-            />
-            <SocialLink
-              href="https://twitter.com"
-              icon={Twitter}
-              label="Twitter"
             />
           </div>
 
@@ -71,7 +66,7 @@ export function HeroSection() {
           <div className="relative h-72 w-72 overflow-hidden rounded-2xl lg:h-80 lg:w-80">
             <Image
               src="/software-engineer-headshot.png"
-              alt="Alex Johnson - Software Engineer"
+              alt="Dmitrii Kupchenko - Senior Full Stack Software Engineer"
               fill
               className="object-cover"
               priority

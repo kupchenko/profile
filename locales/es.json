@@ -10,9 +10,9 @@
   },
   "hero": {
     "availableBadge": "Disponible para nuevos proyectos",
-    "name": "Alex Johnson",
+    "name": "Dmitrii Kupchenko",
     "title": "Ingeniero Fundador y Asesor de Startups",
-    "description": "Construyo experiencias digitales accesibles y pixel-perfect para la web. Mi trabajo favorito se encuentra en la intersección del diseño y el desarrollo, creando experiencias que no solo se ven geniales, sino que están meticulosamente construidas para el rendimiento y la usabilidad.",
+    "description": "Ingeniero de Software Full Stack Senior con más de 10 años de experiencia en arquitectura y desarrollo de aplicaciones escalables de alto rendimiento en entornos impulsados por IA y alta carga. Experto en liderar el diseño e implementación de sistemas empresariales completos en IA Generativa, orquestación de LLM y sistemas de gran escala. Fuerte enfoque en confiabilidad y aplicación de tecnologías de IA de vanguardia para cumplir objetivos empresariales.",
     "location": "San Francisco, CA",
     "cta": {
       "workTogether": "Trabajemos Juntos",
@@ -20,55 +20,55 @@
     }
   },
   "stats": {
-    "yearsIndustry": "Años en la Industria",
-    "successfulProjects": "Proyectos Exitosos",
-    "happyClients": "Clientes Satisfechos",
-    "awards": "Premios y Reconocimientos"
+    "yearsIndustry": "Años de Experiencia",
+    "successfulProjects": "Empresas con las que Trabajé",
+    "happyClients": "Proyectos Principales Liderados",
+    "awards": "Tecnologías Dominadas"
   },
   "expertise": {
     "title": "Cómo Puedo Ayudarte",
-    "subtitle": "Experiencia en todo el ciclo de vida del producto",
+    "subtitle": "Experiencia en todo el stack tecnológico",
     "items": {
       "mvp": {
-        "title": "Idea a MVP",
-        "description": "Iniciando proyectos desde cero y dando vida a tu visión"
+        "title": "Soluciones Impulsadas por IA",
+        "description": "Construyendo sistemas inteligentes con RAG, orquestación de LLM y frameworks de IA/ML de vanguardia"
       },
       "devExperience": {
-        "title": "Experiencia del Desarrollador",
-        "description": "Construyendo rutas y flujos de trabajo de alto rendimiento para desarrolladores"
+        "title": "Desarrollo Full Stack",
+        "description": "Desarrollo completo con JavaScript/TypeScript, Java, Python, Rust y frameworks modernos"
       },
       "processes": {
-        "title": "Procesos de Ingeniería",
-        "description": "Estableciendo procesos de ingeniería eficientes y mejores prácticas"
+        "title": "Nube e Infraestructura",
+        "description": "Arquitectando soluciones escalables en AWS, GCP, Azure con Kubernetes, Terraform e IaC"
       },
       "diligence": {
-        "title": "Diligencia Técnica",
-        "description": "Auditorías técnicas y revisiones de código exhaustivas"
+        "title": "Arquitectura de Microservicios",
+        "description": "Diseño Dirigido por Dominio, Arquitectura Hexagonal y experiencia en sistemas distribuidos"
       },
       "scaling": {
-        "title": "Arquitectura Escalable",
-        "description": "Arquitectando sistemas diseñados para el crecimiento y rendimiento"
+        "title": "Sistemas de Alto Rendimiento",
+        "description": "Construyendo aplicaciones tolerantes a fallos y de alta carga con rendimiento y confiabilidad optimizados"
       }
     }
   },
   "testimonials": {
-    "title": "Lo Que Dicen los Clientes",
-    "subtitle": "Confiado por fundadores y líderes de ingeniería",
+    "title": "Experiencia Profesional",
+    "subtitle": "Más de 10 años en empresas tecnológicas líderes y startups",
     "items": [
       {
-        "name": "Sarah Chen",
-        "role": "CEO, TechStartup Inc",
-        "content": "La experiencia técnica y el pensamiento estratégico de Alex nos ayudaron a escalar de 0 a 100k usuarios en solo 6 meses. Su guía fue invaluable."
+        "name": "Superagent AI",
+        "role": "Ingeniero Fundador (Enero 2025 - Presente)",
+        "content": "Arquitecté un sistema de agentes de IA escalable para alcance automatizado de ventas. Diseñé plataforma de inteligencia conversacional en tiempo real. Construí infraestructura fundamental compatible con SOC2 desde cero usando Terraform."
       },
       {
-        "name": "Michael Rodriguez",
-        "role": "CTO, DataFlow",
-        "content": "Trabajar con Alex fue un cambio de juego. No solo entregó código excepcional, sino que también asesoró a todo nuestro equipo de ingeniería."
+        "name": "TrafficLabel",
+        "role": "Ingeniero de Software Senior (Julio 2024 - Sep 2025)",
+        "content": "Lideré el desarrollo e integración de plataforma de marketing con sistemas de análisis de terceros. Desarrollé portal de marketing integral para gestión de campañas y compromiso con clientes."
       },
       {
-        "name": "Emily Watson",
-        "role": "Gerente de Producto, CloudSync",
-        "content": "Alex tiene una capacidad increíble para traducir requisitos de negocio en soluciones técnicas elegantes. ¡Altamente recomendado!"
+        "name": "Synergetica",
+        "role": "Ingeniero de Software Senior (Agosto 2022 - Mayo 2024)",
+        "content": "Lideré iniciativa para modernizar portal de soporte al cliente, aumentando retención. Integré agentes de IA para reducir gastos de soporte. Migré de EC2 a Kubernetes. Reduje tiempo de consultas Hibernate en 30% y pérdida de datos en 80%."
       }
     ]
   },

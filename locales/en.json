@@ -9,9 +9,9 @@
     "description": "Choose your preferred language for the interface"
   },
   "hero": {
-    "name": "Alex Johnson",
+    "name": "Dmitrii Kupchenko",
     "title": "Founding Engineer & Startup Advisor",
-    "description": "I build accessible, pixel-perfect digital experiences for the web. My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.",
+    "description": "Senior Full Stack Software Engineer with 10+ years of expertise in architecting and developing high-performance, scalable applications in AI-driven and high-load environments. Adept at leading the end-to-end system design and implementation of enterprise solutions across Generative AI, LLM orchestration, and large-scale systems. Strong focus on reliability and applying cutting-edge AI technologies to meet business objectives.",
     "location": "San Francisco, CA",
     "cta": {
       "workTogether": "Let's Work Together",
@@ -26,48 +26,48 @@
   },
   "expertise": {
     "title": "How I Can Help You",
-    "subtitle": "Expertise across the full product lifecycle",
+    "subtitle": "Expertise across the full technology stack",
     "items": {
       "mvp": {
-        "title": "Idea to MVP",
-        "description": "Starting projects from scratch and bringing your vision to life"
+        "title": "AI-Driven Solutions",
+        "description": "Building intelligent systems with RAG, LLM orchestration, and cutting-edge AI/ML frameworks"
       },
       "devExperience": {
-        "title": "Developer Experience",
-        "description": "Building high-performance developer paths and workflows"
+        "title": "Full Stack Development",
+        "description": "End-to-end development with JavaScript/TypeScript, Java, Python, Rust, and modern frameworks"
       },
       "processes": {
-        "title": "Engineering Processes",
-        "description": "Setting up efficient engineering processes and best practices"
+        "title": "Cloud & Infrastructure",
+        "description": "Architecting scalable solutions on AWS, GCP, Azure with Kubernetes, Terraform, and IaC"
       },
       "diligence": {
-        "title": "Technical Due Diligence",
-        "description": "Comprehensive technical audits and code reviews"
+        "title": "Microservices Architecture",
+        "description": "Domain-Driven Design, Hexagonal Architecture, and distributed systems expertise"
       },
       "scaling": {
-        "title": "Scaling Architecture",
-        "description": "Architecting systems designed for growth and performance"
+        "title": "High-Performance Systems",
+        "description": "Building fault-tolerant, high-load applications with optimized performance and reliability"
       }
     }
   },
   "testimonials": {
-    "title": "What Clients Say",
-    "subtitle": "Trusted by founders and engineering leaders",
+    "title": "Professional Experience",
+    "subtitle": "10+ years across leading tech companies and startups",
     "items": [
       {
-        "name": "Sarah Chen",
-        "role": "CEO, TechStartup Inc",
-        "content": "Alex's technical expertise and strategic thinking helped us scale from 0 to 100k users in just 6 months. His guidance was invaluable."
+        "name": "Superagent AI",
+        "role": "Founding Engineer (Jan 2025 - Present)",
+        "content": "Architected scalable AI agent system for automated sales outreach. Engineered real-time conversational intelligence platform. Built foundational SOC2-compliant infrastructure from ground up using Terraform."
       },
       {
-        "name": "Michael Rodriguez",
-        "role": "CTO, DataFlow",
-        "content": "Working with Alex was a game-changer. He not only delivered exceptional code but also mentored our entire engineering team."
+        "name": "TrafficLabel",
+        "role": "Senior Software Engineer (July 2024 - Sep 2025)",
+        "content": "Led development and integration of marketing platform with third-party analytics systems. Developed comprehensive marketing portal for campaign management and customer engagement."
       },
       {
-        "name": "Emily Watson",
-        "role": "Product Manager, CloudSync",
-        "content": "Alex has an incredible ability to translate business requirements into elegant technical solutions. Highly recommended!"
+        "name": "Synergetica",
+        "role": "Senior Software Engineer (Aug 2022 - May 2024)",
+        "content": "Led initiative to modernize customer support portal, increasing client retention. Integrated AI agents to reduce support expenses. Migrated from EC2 to Kubernetes. Reduced Hibernate query time by 30% and data loss by 80%."
       }
     ]
   },

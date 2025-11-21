@@ -64,7 +64,7 @@ export function BookCallModal() {
                 variant="link"
                 size="sm"
                 onClick={() => setShowMonthlyPopup(true)}
-                className="h-auto p-0 text-xs text-blue-500 hover:text-blue-600"
+                className="h-auto p-0 text-xs text-blue-500 hover:text-blue-600 cursor-pointer"
               >
                 {t.bookCall.showMoreDates}
                 <ChevronRight className="h-3 w-3 ml-1" />
@@ -76,7 +76,7 @@ export function BookCallModal() {
                   <button
                     key={item.date}
                     onClick={() => setSelectedDate(item.date)}
-                    className={`flex flex-col items-center rounded-lg border p-3 text-center transition-all w-[70px] shrink-0 ${
+                    className={`flex flex-col items-center rounded-lg border p-3 text-center transition-all w-[70px] shrink-0 cursor-pointer ${
                       selectedDate === item.date
                         ? "border-blue-500 bg-blue-500/10 text-blue-500"
                         : "border-border bg-muted/30 hover:border-blue-500/50 hover:bg-muted"
