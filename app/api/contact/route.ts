@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { neon } from "@neondatabase/serverless";
 
 export async function POST(request: Request) {
   try {
@@ -27,6 +28,13 @@ export async function POST(request: Request) {
 
     // Log the contact form (in a real app, save to database)
     console.log("Contact form received:", { firstName, lastName, email, message });
+
+    // Save to database
+    const sql = neon(`${process.env.DATABASE_URL}`);
+    await sql.query(
+      'INSERT INTO contacts (first_name, last_name, email, message, created_at) VALUES ($1, $2, $3, $4, NOW())',
+      [firstName, lastName, email, message]
+    );
 
     // In a real app, you would:
     // 1. Save to database

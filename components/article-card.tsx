@@ -13,7 +13,7 @@ export function ArticleCard({ id, title, date, readTime, href }: ArticleCardProp
   const linkHref = href || `/blog/${id}`
   
   return (
-    <Card className="group transition-all hover:border-foreground/20 hover:bg-muted/30" asChild>
+    <Card className="group transition-all hover:border-foreground/20 hover:bg-muted/30">
       <Link href={linkHref}>
         <CardHeader className="p-4">
           <CardTitle className="text-base font-semibold leading-tight transition-colors group-hover:text-foreground">

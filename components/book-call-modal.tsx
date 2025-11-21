@@ -17,7 +17,7 @@ import {
   getAvailableDates,
   getTimeSlots,
   type AvailableDate,
-} from "@/lib/mock-api";
+} from "@/lib/api.service";
 import { Calendar, Clock, ChevronRight } from "lucide-react";
 
 export function BookCallModal() {

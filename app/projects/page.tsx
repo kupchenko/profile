@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ContainerWrapper } from "@/components/container-wrapper";
 import { useLanguage } from "@/contexts/language-context";
-import { getProjects, type Project } from "@/lib/mock-api";
+import { getProjects, type Project } from "@/lib/api.service";
 import Image from "next/image";
 import { ExternalLink, Bell } from "lucide-react";
 import { CountdownTimer } from "@/components/countdown-timer";
