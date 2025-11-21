@@ -132,24 +132,24 @@
         "description": "Plataforma de IA Agéntica de Ventas que ofrece inteligencia conversacional en tiempo real y orientación en vivo para potenciar equipos de ventas."
       },
       {
-        "name": "CloudSync Pro",
-        "description": "Plataforma de sincronización de archivos y colaboración de nivel empresarial para equipos distribuidos."
+        "name": "Healthy Family",
+        "description": "Plataforma de seguimiento de salud impulsada por IA para cargar y monitorear resultados de pruebas médicas a lo largo del tiempo, con análisis inteligente de tendencias."
       },
       {
-        "name": "DataViz Studio",
-        "description": "Panel de visualización de datos y análisis avanzado para inteligencia de negocios."
+        "name": "Ask Expert",
+        "description": "Conéctate instantáneamente con expertos verificados en cualquier industria a través de videollamada. Ya no esperes más - obtén asesoramiento profesional de plomeros, electricistas, abogados y más."
       },
       {
-        "name": "DevOps Toolkit",
-        "description": "Suite completa de herramientas para flujos de trabajo DevOps modernos y pipelines CI/CD."
+        "name": "GlowBook",
+        "description": "Plataforma inteligente de reservas para barberías, salones de belleza y centros de bienestar. Programa citas, gestiona tu rutina de belleza y descubre nuevos servicios."
       },
       {
-        "name": "API Gateway Hub",
-        "description": "Plataforma centralizada de gestión de API con limitación de tasa y capacidades de monitoreo."
+        "name": "Fluentia",
+        "description": "Plataforma educativa revolucionaria impulsada por IA con tutores de IA para experiencias de aprendizaje personalizadas, todos revisados y evaluados por educadores humanos reales."
       },
       {
-        "name": "SecureAuth",
-        "description": "Sistema de autenticación de confianza cero con soporte multifactor e integración biométrica."
+        "name": "FitTrack Pro",
+        "description": "Aplicación integral de seguimiento de fitness y bienestar con planes de entrenamiento impulsados por IA, orientación nutricional y análisis de progreso."
       }
     ]
   },
@@ -163,6 +163,14 @@
     "messagePlaceholder": "Cuéntame sobre tu proyecto...",
     "recaptcha": "Protegido por Google reCAPTCHA",
     "submit": "Enviar Mensaje"
+  },
+  "notifyWhenLive": {
+    "title": "Únete a la Lista de Espera",
+    "description": "Sé el primero en saber cuando este proyecto esté disponible. Te enviaremos una notificación por correo electrónico.",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo Electrónico",
+    "submit": "Notificarme"
   },
   "bookCall": {
     "title": "Agendar una Llamada de 30 Minutos",

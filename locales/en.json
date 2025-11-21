@@ -131,24 +131,24 @@
         "description": "Agentic Sales AI platform delivering real-time conversational intelligence and live guidance to supercharge sales teams."
       },
       {
-        "name": "CloudSync Pro",
-        "description": "Enterprise-grade file synchronization and collaboration platform for distributed teams."
+        "name": "Healthy Family",
+        "description": "AI-powered health tracking platform for uploading and monitoring your medical test results over time, with intelligent insights and trend analysis."
       },
       {
-        "name": "DataViz Studio",
-        "description": "Advanced data visualization and analytics dashboard for business intelligence."
+        "name": "Ask Expert",
+        "description": "Connect instantly with verified experts in any industry through video chat. No more waiting - get professional advice from plumbers, electricians, lawyers, and more."
       },
       {
-        "name": "DevOps Toolkit",
-        "description": "Comprehensive suite of tools for modern DevOps workflows and CI/CD pipelines."
+        "name": "GlowBook",
+        "description": "Smart booking platform for barbershops, beauty salons, and wellness centers. Schedule appointments, manage your beauty routine, and discover new services."
       },
       {
-        "name": "API Gateway Hub",
-        "description": "Centralized API management platform with rate limiting and monitoring capabilities."
+        "name": "Fluentia",
+        "description": "Revolutionary AI-powered education platform featuring AI tutors for personalized learning experiences, all reviewed and assessed by real human educators."
       },
       {
-        "name": "SecureAuth",
-        "description": "Zero-trust authentication system with multi-factor support and biometric integration."
+        "name": "FitTrack Pro",
+        "description": "Comprehensive fitness and wellness tracking app with AI-powered workout plans, nutrition guidance, and progress analytics."
       }
     ]
   },
@@ -162,6 +162,14 @@
     "messagePlaceholder": "Tell me about your project...",
     "recaptcha": "Protected by Google reCAPTCHA",
     "submit": "Send Message"
+  },
+  "notifyWhenLive": {
+    "title": "Join the Waiting List",
+    "description": "Be the first to know when this project goes live. We'll send you an email notification.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "submit": "Notify Me"
   },
   "bookCall": {
     "title": "Schedule a 30-Minute Call",

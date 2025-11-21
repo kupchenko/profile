@@ -20,8 +20,9 @@ import { ContainerWrapper } from "@/components/container-wrapper";
 import { useLanguage } from "@/contexts/language-context";
 import { getProjects, type Project } from "@/lib/api.service";
 import Image from "next/image";
-import { ExternalLink, Bell } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { CountdownTimer } from "@/components/countdown-timer";
+import { NotifyWhenLiveModal } from "@/components/notify-when-live-modal";
 
 export default function ProjectsPage() {
   const { t } = useLanguage();
@@ -118,10 +119,9 @@ export default function ProjectsPage() {
 
                   <CardFooter>
                     {project.comingSoon ? (
-                      <Button className="w-full cursor-pointer" size="lg">
-                        <Bell className="mr-2 h-4 w-4" />
-                        {t.projectsPage.buttons.notify}
-                      </Button>
+                      <NotifyWhenLiveModal
+                        projectName={projectInfo?.name || "Project"}
+                      />
                     ) : (
                       <Button
                         className="w-full cursor-pointer"

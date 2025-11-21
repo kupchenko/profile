@@ -162,3 +162,36 @@ export async function submitContactForm(data: {
   }
 }
 
+// API: Submit waiting list form
+export async function submitWaitingList(data: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  projectName: string;
+  captchaToken?: string;
+}): Promise<{ success: boolean; message: string }> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/waiting-list`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.message || `HTTP error! status: ${response.status}`);
+    }
+
+    return result;
+  } catch (error) {
+    console.error("Error submitting to waiting list:", error);
+    return {
+      success: false,
+      message: error instanceof Error ? error.message : "Failed to join waiting list",
+    };
+  }
+}
+
