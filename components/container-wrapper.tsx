@@ -12,7 +12,7 @@ export function ContainerWrapper({
   as: Component = "div" 
 }: ContainerWrapperProps) {
   return (
-    <Component className={cn("w-full max-w-[80%] mx-auto px-4", className)}>
+    <Component className={cn("w-full max-w-[70%] mx-auto px-4", className)}>
       {children}
     </Component>
   )
