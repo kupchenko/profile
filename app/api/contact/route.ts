@@ -32,7 +32,7 @@ export async function POST(request: Request) {
     // Save to database
     const sql = neon(`${process.env.DATABASE_URL}`);
     await sql.query(
-      'INSERT INTO contacts (first_name, last_name, email, message, created_at) VALUES ($1, $2, $3, $4, NOW())',
+      'INSERT INTO contact_requests (first_name, last_name, email, message, created_at) VALUES ($1, $2, $3, $4, NOW())',
       [firstName, lastName, email, message]
     );
 

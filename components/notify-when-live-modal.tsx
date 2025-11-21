@@ -35,10 +35,13 @@ export function NotifyWhenLiveModal({ projectName }: NotifyWhenLiveModalProps) {
     email: "",
   });
 
+  // Skip captcha in development mode
+  const isDevelopment = process.env.NODE_ENV === "development";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!captchaToken) {
+    if (!isDevelopment && !captchaToken) {
       toast({
         title: "Verification Required",
         description: "Please complete the reCAPTCHA verification.",
@@ -53,7 +56,7 @@ export function NotifyWhenLiveModal({ projectName }: NotifyWhenLiveModalProps) {
       const result = await submitWaitingList({
         ...formData,
         projectName,
-        captchaToken,
+        captchaToken: captchaToken || undefined,
       });
 
       if (result.success) {
@@ -149,20 +152,22 @@ export function NotifyWhenLiveModal({ projectName }: NotifyWhenLiveModalProps) {
               disabled={isSubmitting}
             />
           </div>
-          <div className="flex justify-center">
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-              onChange={(token) => setCaptchaToken(token)}
-              onExpired={() => setCaptchaToken(null)}
-              onErrored={() => setCaptchaToken(null)}
-            />
-          </div>
+          {!isDevelopment && (
+            <div className="flex justify-center">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                onChange={(token) => setCaptchaToken(token)}
+                onExpired={() => setCaptchaToken(null)}
+                onErrored={() => setCaptchaToken(null)}
+              />
+            </div>
+          )}
           <Button
             type="submit"
             className="w-full cursor-pointer"
             size="default"
-            disabled={isSubmitting || !captchaToken}
+            disabled={isSubmitting || (!isDevelopment && !captchaToken)}
           >
             {isSubmitting ? "Submitting..." : t.notifyWhenLive.submit}
           </Button>
