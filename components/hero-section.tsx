@@ -3,7 +3,6 @@
 import { ContactModal } from "./contact-modal";
 import { BookCallModal } from "./book-call-modal";
 import { ContainerWrapper } from "./container-wrapper";
-import { AvailabilityBadge } from "./availability-badge";
 import { SocialLink } from "./social-link";
 import { useLanguage } from "@/contexts/language-context";
 import Image from "next/image";
@@ -17,7 +16,6 @@ export function HeroSection() {
       <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] md:gap-10 lg:gap-12">
         <div className="flex flex-col justify-center space-y-5">
           <div className="space-y-3">
-            <AvailabilityBadge text={t.hero.availableBadge} />
             <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
               {t.hero.name}
             </h1>

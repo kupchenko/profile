@@ -15,7 +15,7 @@ export function ProjectCard({ id, title, description, tags, href }: ProjectCardP
   const linkHref = href || `/projects#${id}`
   
   return (
-    <Card className="group transition-all hover:border-foreground/20 hover:bg-muted/30" asChild>
+    <Card className="group transition-all hover:border-foreground/20 hover:bg-muted/30">
       <Link href={linkHref}>
         <CardHeader>
           <div className="flex items-start justify-between gap-4">

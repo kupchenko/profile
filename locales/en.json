@@ -9,7 +9,6 @@
     "description": "Choose your preferred language for the interface"
   },
   "hero": {
-    "availableBadge": "Available for new projects",
     "name": "Alex Johnson",
     "title": "Founding Engineer & Startup Advisor",
     "description": "I build accessible, pixel-perfect digital experiences for the web. My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.",
