@@ -11,6 +11,11 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from "@/components/ui/tooltip";
 import { ContainerWrapper } from "@/components/container-wrapper";
 import { useLanguage } from "@/contexts/language-context";
 import { getProjects, type Project } from "@/lib/api.service";
@@ -47,6 +52,26 @@ export default function ProjectsPage() {
                   key={project.id}
                   className="group relative flex flex-col overflow-hidden border-border/50 transition-all hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10"
                 >
+                  {/* Countdown Timer Badge - Top Left Corner */}
+                  {project.isNew && project.discountEndDate && (
+                    <div className="absolute left-4 top-4 z-10">
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div className="cursor-help">
+                            <CountdownTimer
+                              targetDate={project.discountEndDate}
+                              compact
+                            />
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent side="bottom" className="max-w-xs">
+                          {t.projectsPage.lifetimeOfferTooltip}
+                        </TooltipContent>
+                      </Tooltip>
+                    </div>
+                  )}
+
+                  {/* Status Badges - Top Right Corner */}
                   {project.comingSoon ? (
                     <Badge
                       variant="default"
@@ -89,15 +114,6 @@ export default function ProjectsPage() {
                     <CardDescription className="text-pretty text-sm">
                       {projectInfo?.description}
                     </CardDescription>
-
-                    {project.isNew && project.discountEndDate && (
-                      <div className="space-y-2 rounded-lg border border-border/50 bg-muted/30 p-3 mt-4">
-                        <p className="text-center text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-                          {t.projectsPage.lifetimeOffer}
-                        </p>
-                        <CountdownTimer targetDate={project.discountEndDate} />
-                      </div>
-                    )}
                   </CardContent>
 
                   <CardFooter>
@@ -107,7 +123,19 @@ export default function ProjectsPage() {
                         {t.projectsPage.buttons.notify}
                       </Button>
                     ) : (
-                      <Button className="w-full cursor-pointer" size="lg">
+                      <Button
+                        className="w-full cursor-pointer"
+                        size="lg"
+                        onClick={() => {
+                          if (project.link && project.link !== "#") {
+                            window.open(
+                              project.link,
+                              "_blank",
+                              "noopener,noreferrer"
+                            );
+                          }
+                        }}
+                      >
                         {t.projectsPage.buttons.tryIt}
                         <ExternalLink className="ml-2 h-4 w-4" />
                       </Button>

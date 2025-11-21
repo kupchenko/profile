@@ -125,10 +125,11 @@
       "tryIt": "Probar"
     },
     "lifetimeOffer": "La Oferta de por Vida Termina En",
+    "lifetimeOfferTooltip": "Acceso de por vida a precio especial - ¡Apúrate!",
     "projects": [
       {
-        "name": "CodeReview AI",
-        "description": "Asistente de revisión de código impulsado por IA que ayuda a los equipos a mantener altos estándares de calidad de código."
+        "name": "Superagent AI",
+        "description": "Plataforma de IA Agéntica de Ventas que ofrece inteligencia conversacional en tiempo real y orientación en vivo para potenciar equipos de ventas."
       },
       {
         "name": "CloudSync Pro",

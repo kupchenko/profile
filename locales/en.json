@@ -124,10 +124,11 @@
       "tryIt": "Try it"
     },
     "lifetimeOffer": "Lifetime Offer Ends In",
+    "lifetimeOfferTooltip": "Lifetime access at special price - Hurry!",
     "projects": [
       {
-        "name": "CodeReview AI",
-        "description": "AI-powered code review assistant that helps teams maintain high code quality standards."
+        "name": "Superagent AI",
+        "description": "Agentic Sales AI platform delivering real-time conversational intelligence and live guidance to supercharge sales teams."
       },
       {
         "name": "CloudSync Pro",
