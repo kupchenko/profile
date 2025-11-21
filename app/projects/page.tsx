@@ -118,7 +118,7 @@ export default function ProjectsPage() {
                   </CardContent>
 
                   <CardFooter>
-                    {project.comingSoon ? (
+                    {project.comingSoon && !project.link ? (
                       <NotifyWhenLiveModal
                         projectName={projectInfo?.name || "Project"}
                       />
@@ -136,7 +136,9 @@ export default function ProjectsPage() {
                           }
                         }}
                       >
-                        {t.projectsPage.buttons.tryIt}
+                        {project.comingSoon && project.link
+                          ? t.projectsPage.buttons.checkUpdates
+                          : t.projectsPage.buttons.tryIt}
                         <ExternalLink className="ml-2 h-4 w-4" />
                       </Button>
                     )}

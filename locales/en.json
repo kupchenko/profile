@@ -121,7 +121,8 @@
     },
     "buttons": {
       "notify": "Notify when live",
-      "tryIt": "Try it"
+      "tryIt": "Try it",
+      "checkUpdates": "Check updates"
     },
     "lifetimeOffer": "Lifetime Offer Ends In",
     "lifetimeOfferTooltip": "Lifetime access at special price - Hurry!",
