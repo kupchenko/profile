@@ -40,6 +40,13 @@ export async function GET() {
       link: null,
       comingSoon: true,
     },
+    {
+      id: "6",
+      name: "Multitool",
+      logo: "/projects/multitool-logo.png",
+      link: "https://paramount.tools",
+      discount: 20,
+    },
   ];
 
   return NextResponse.json(projects);

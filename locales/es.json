@@ -146,6 +146,10 @@
       {
         "name": "Fluentia",
         "description": "Plataforma educativa revolucionaria impulsada por IA con tutores de IA para experiencias de aprendizaje personalizadas, todos revisados y evaluados por educadores humanos reales."
+      },
+      {
+        "name": "Multitool",
+        "description": "Herramienta potente de gestión de documentos y archivos para comprimir, convertir y transformar archivos. Convierte PDFs a DOC, comprime imágenes y maneja todas tus necesidades de procesamiento de archivos de manera eficiente."
       }
     ]
   },

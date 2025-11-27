@@ -146,6 +146,10 @@
       {
         "name": "Fluentia",
         "description": "Revolutionary AI-powered education platform featuring AI tutors for personalized learning experiences, all reviewed and assessed by real human educators."
+      },
+      {
+        "name": "Multitool",
+        "description": "Powerful document and file management tool for compressing, converting, and transforming files. Convert PDFs to DOC, compress images, and handle all your file processing needs efficiently."
       }
     ]
   },
